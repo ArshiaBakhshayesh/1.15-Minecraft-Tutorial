@@ -1,0 +1,13 @@
+{
+	"language.name": "English",
+	"language.region": "United States",
+	"language.code": "en_us",
+	"block.tutorial.ruby_ore": "Ruby Ore",
+	"block.tutorial.jar": "Jar",
+	"block.tutorial.storage": "Storage",
+	"block.tutorial.advanced_crafting_table": "Advanced Crafting Table",
+	"item.tutorial.ruby": "Ruby",
+	"item.tutorial.perspectives_record": "Perspectives Record",
+	"item.tutorial.perspectives_record.desc": "Kevin MacLeod - Perspectives",
+	"itemGroup.tutorial": "Tutorial"
+}

@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "tutorial:block/advanced_crafting_table_front",
+        "down": "block/cobblestone",
+        "up": "tutorial:block/advanced_crafting_table_top",
+        "north": "tutorial:block/advanced_crafting_table_front",
+        "east": "tutorial:block/advanced_crafting_table_side",
+        "south": "tutorial:block/advanced_crafting_table_side",
+        "west": "tutorial:block/advanced_crafting_table_front"
+    }
+}
