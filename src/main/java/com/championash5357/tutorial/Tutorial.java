@@ -6,10 +6,12 @@ import com.championash5357.tutorial.init.TutorialBlocks;
 import com.championash5357.tutorial.init.TutorialContainers;
 import com.championash5357.tutorial.init.TutorialTab;
 import com.championash5357.tutorial.init.TutorialTileEntities;
+import com.championash5357.tutorial.util.GenerationUtil;
 
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.crafting.ShapedRecipe;
+import net.minecraft.world.gen.feature.OreFeatureConfig.FillerBlockType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -31,6 +33,7 @@ public class Tutorial {
 	@SubscribeEvent
 	public static void setup(final FMLCommonSetupEvent event) {
 		ShapedRecipe.setCraftingSize(5, 5);
+		GenerationUtil.generateOre(FillerBlockType.NATURAL_STONE, TutorialBlocks.RUBY_ORE.getDefaultState(), 8, 1, 0, 0, 16);
 	}
 	
 	@SubscribeEvent
