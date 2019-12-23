@@ -1,10 +1,12 @@
 package com.championash5357.tutorial.inventory.container;
 
 import com.championash5357.tutorial.init.TutorialContainers;
+import com.championash5357.tutorial.init.TutorialCriterions;
 import com.championash5357.tutorial.tileentity.TileEntityStorage;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
@@ -30,6 +32,7 @@ public class ContainerStorage extends Container {
 					@Override
 					public void onSlotChanged() {
 						storage.save();
+						if(!player.player.world.isRemote) TutorialCriterions.STORAGE_CHANGED.trigger((ServerPlayerEntity) player.player, storage.getInventory());
 					}
 				});
 		

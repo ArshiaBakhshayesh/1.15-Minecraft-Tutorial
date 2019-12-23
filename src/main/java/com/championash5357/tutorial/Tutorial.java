@@ -4,6 +4,7 @@ import com.championash5357.tutorial.client.gui.GuiAdvancedCraftingTable;
 import com.championash5357.tutorial.client.gui.GuiStorage;
 import com.championash5357.tutorial.init.TutorialBlocks;
 import com.championash5357.tutorial.init.TutorialContainers;
+import com.championash5357.tutorial.init.TutorialCriterions;
 import com.championash5357.tutorial.init.TutorialTab;
 import com.championash5357.tutorial.init.TutorialTileEntities;
 import com.championash5357.tutorial.util.GenerationUtil;
@@ -33,6 +34,7 @@ public class Tutorial {
 	@SubscribeEvent
 	public static void setup(final FMLCommonSetupEvent event) {
 		ShapedRecipe.setCraftingSize(5, 5);
+		TutorialCriterions.register();
 		GenerationUtil.generateOre(FillerBlockType.NATURAL_STONE, TutorialBlocks.RUBY_ORE.getDefaultState(), 8, 1, 0, 0, 16);
 	}
 	

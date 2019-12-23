@@ -9,5 +9,11 @@
 	"item.tutorial.ruby": "Ruby",
 	"item.tutorial.perspectives_record": "Perspectives Record",
 	"item.tutorial.perspectives_record.desc": "Kevin MacLeod - Perspectives",
-	"itemGroup.tutorial": "Tutorial"
+	"itemGroup.tutorial": "Tutorial",
+	"advancements.tutorial.root.title": "Tutorial Start!",
+	"advancements.tutorial.root.description": "Start exploring the Tutorial Mod.",
+	"advancements.tutorial.storage.title": "A Wooden Dispenser Chest",
+	"advancements.tutorial.storage.description": "Craft a Storage block.",
+	"advancements.tutorial.storage_in_storage.title": "Useless^2",
+	"advancements.tutorial.storage_in_storage.description": "Put a Storage block in a Storage block."
 }
