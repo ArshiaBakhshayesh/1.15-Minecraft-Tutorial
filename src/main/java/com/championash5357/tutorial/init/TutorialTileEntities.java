@@ -1,8 +1,10 @@
 package com.championash5357.tutorial.init;
 
 import com.championash5357.tutorial.client.renderer.TileEntityJarRenderer;
+import com.championash5357.tutorial.client.renderer.TileEntityStonePedestalRenderer;
 import com.championash5357.tutorial.tileentity.TileEntityAdvancedCraftingTable;
 import com.championash5357.tutorial.tileentity.TileEntityJar;
+import com.championash5357.tutorial.tileentity.TileEntityStonePedestal;
 import com.championash5357.tutorial.tileentity.TileEntityStorage;
 
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
@@ -24,6 +26,7 @@ public class TutorialTileEntities {
 	public static final TileEntityType<TileEntityJar> JAR = Null();
 	public static final TileEntityType<TileEntityStorage> STORAGE = Null();
 	public static final TileEntityType<TileEntityAdvancedCraftingTable> ADVANCED_CRAFTING_TABLE = Null();
+	public static final TileEntityType<TileEntityStonePedestal> STONE_PEDESTAL = Null();
 
 	@Mod.EventBusSubscriber(modid = Tutorial.MOD_ID, bus = Bus.MOD)
 	public static class Register {
@@ -33,7 +36,8 @@ public class TutorialTileEntities {
 			final TileEntityType<?>[] tile_entities = {
 					TileEntityType.Builder.create(TileEntityJar::new, TutorialBlocks.JAR).build(null).setRegistryName(Tutorial.MOD_ID, "jar"),
 					TileEntityType.Builder.create(TileEntityStorage::new).build(null).setRegistryName(Tutorial.MOD_ID, "storage"),
-					TileEntityType.Builder.create(TileEntityAdvancedCraftingTable::new).build(null).setRegistryName(Tutorial.MOD_ID, "advanced_crafting_table")
+					TileEntityType.Builder.create(TileEntityAdvancedCraftingTable::new).build(null).setRegistryName(Tutorial.MOD_ID, "advanced_crafting_table"),
+					TileEntityType.Builder.create(TileEntityStonePedestal::new, TutorialBlocks.STONE_PEDESTAL).build(null).setRegistryName(Tutorial.MOD_ID, "stone_pedestal")
 			};
 			
 			event.getRegistry().registerAll(tile_entities);
@@ -43,5 +47,6 @@ public class TutorialTileEntities {
 	@OnlyIn(Dist.CLIENT)
 	public static void renders() {
 		ClientRegistry.bindTileEntityRenderer(JAR, new TileEntityJarRenderer(TileEntityRendererDispatcher.instance));
+		ClientRegistry.bindTileEntityRenderer(STONE_PEDESTAL, new TileEntityStonePedestalRenderer(TileEntityRendererDispatcher.instance));
 	}
 }

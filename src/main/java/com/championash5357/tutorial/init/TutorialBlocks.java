@@ -6,6 +6,7 @@ import com.championash5357.tutorial.Tutorial;
 import com.championash5357.tutorial.block.BlockAdvancedCraftingTable;
 import com.championash5357.tutorial.block.BlockJar;
 import com.championash5357.tutorial.block.BlockRubyOre;
+import com.championash5357.tutorial.block.BlockStonePedestal;
 import com.championash5357.tutorial.block.BlockStorage;
 import com.google.common.base.Preconditions;
 
@@ -31,6 +32,7 @@ public class TutorialBlocks {
 	public static final BlockJar JAR = Null();
 	public static final BlockStorage STORAGE = Null();
 	public static final BlockAdvancedCraftingTable ADVANCED_CRAFTING_TABLE = Null();
+	public static final BlockStonePedestal STONE_PEDESTAL = Null();
 	
 	@Mod.EventBusSubscriber(modid = Tutorial.MOD_ID, bus = Bus.MOD)
 	public static class Register {
@@ -43,7 +45,8 @@ public class TutorialBlocks {
 					new BlockRubyOre(),
 					new BlockJar(),
 					new BlockStorage(),
-					new BlockAdvancedCraftingTable()
+					new BlockAdvancedCraftingTable(),
+					new BlockStonePedestal()
 			};
 			
 			event.getRegistry().registerAll(blocks);
@@ -55,7 +58,8 @@ public class TutorialBlocks {
 					new BlockItem(RUBY_ORE, new Item.Properties().maxStackSize(32).rarity(Rarity.UNCOMMON).group(Tutorial.TUTORIAL_TAB)),
 					new BlockItem(JAR, new Item.Properties().group(Tutorial.TUTORIAL_TAB)),
 					new BlockItem(STORAGE, new Item.Properties().group(Tutorial.TUTORIAL_TAB)),
-					new BlockItem(ADVANCED_CRAFTING_TABLE, new Item.Properties().group(Tutorial.TUTORIAL_TAB))
+					new BlockItem(ADVANCED_CRAFTING_TABLE, new Item.Properties().group(Tutorial.TUTORIAL_TAB)),
+					new BlockItem(STONE_PEDESTAL, new Item.Properties().group(Tutorial.TUTORIAL_TAB))
 			};
 			
 			for(final BlockItem item : items) {
