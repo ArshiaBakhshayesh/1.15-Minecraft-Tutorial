@@ -2,6 +2,7 @@
 
 import com.championash5357.tutorial.client.gui.GuiAdvancedCraftingTable;
 import com.championash5357.tutorial.client.gui.GuiStorage;
+import com.championash5357.tutorial.config.TutorialConfig;
 import com.championash5357.tutorial.init.TutorialBlocks;
 import com.championash5357.tutorial.init.TutorialContainers;
 import com.championash5357.tutorial.init.TutorialCriterions;
@@ -17,8 +18,10 @@ import net.minecraft.world.gen.feature.OreFeatureConfig.FillerBlockType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
+import net.minecraftforge.fml.config.ModConfig.Type;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
@@ -32,9 +35,13 @@ public class Tutorial {
 	
 	public static final ItemGroup TUTORIAL_TAB = new TutorialTab();
 	
+	public Tutorial() {
+		ModLoadingContext.get().registerConfig(Type.COMMON, TutorialConfig.COMMON_SPEC, "tutorial-common.toml");
+	}
+	
 	@SubscribeEvent
 	public static void setup(final FMLCommonSetupEvent event) {
-		ShapedRecipe.setCraftingSize(5, 5);
+		ShapedRecipe.setCraftingSize(TutorialConfig.COMMON.crafting_width.get(), TutorialConfig.COMMON.crafting_height.get());
 		TutorialCriterions.register();
 		TutorialPotions.addRecipes();
 		GenerationUtil.generateOre(FillerBlockType.NATURAL_STONE, TutorialBlocks.RUBY_ORE.getDefaultState(), 8, 1, 0, 0, 16);
