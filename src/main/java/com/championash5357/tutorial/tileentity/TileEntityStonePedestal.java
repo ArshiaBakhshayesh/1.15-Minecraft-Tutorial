@@ -7,6 +7,10 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Direction;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
 public class TileEntityStonePedestal extends TileEntity {
@@ -49,6 +53,12 @@ public class TileEntityStonePedestal extends TileEntity {
 		return new SUpdateTileEntityPacket(pos, 0, this.getUpdateTag());
 	}
 	
+	@Override
+	public <T> LazyOptional<T> getCapability(Capability<T> cap, Direction side) {
+		if(cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) return LazyOptional.of(() -> this.inventory).cast();
+		return super.getCapability(cap, side);
+	}
+	
 	public boolean setItemStack(ItemStack stack, int direction) {
 		if(inventory.getStackInSlot(0).isEmpty()) {
 			ItemStack inv = stack.copy();
@@ -72,9 +82,9 @@ public class TileEntityStonePedestal extends TileEntity {
 		return ItemStack.EMPTY;
 	}
 	
-	public ItemStack getInventory() {
+	/*public ItemStack getInventory() {
 		return inventory.getStackInSlot(0);
-	}
+	}*/
 	
 	public int getDirection() {
 		return direction;
