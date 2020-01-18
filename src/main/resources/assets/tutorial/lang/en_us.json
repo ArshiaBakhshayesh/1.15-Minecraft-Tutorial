@@ -30,5 +30,8 @@
 	"item.minecraft.lingering_potion.effect.short_odd": "Odd Lingering Potion",
 	"item.minecraft.tipped_arrow.effect.odd": "Odd Tipped Arrow",
 	"item.minecraft.tipped_arrow.effect.long_odd": "Odd Tipped Arrow",
-	"item.minecraft.tipped_arrow.effect.short_odd": "Odd Tipped Arrow"
+	"item.minecraft.tipped_arrow.effect.short_odd": "Odd Tipped Arrow",
+	"commands.hello": "Hello, %s!",
+	"commands.hello.color": "Hello, %s%s!",
+	"commands.hello.unknown": "Unknown color: %s"
 }
