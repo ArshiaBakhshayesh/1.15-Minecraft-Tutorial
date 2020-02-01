@@ -6,6 +6,7 @@ import com.championash5357.tutorial.Tutorial;
 import com.championash5357.tutorial.item.ItemRuby;
 import com.championash5357.tutorial.item.ItemTutorialRecord;
 
+import net.minecraft.item.BucketItem;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.Properties;
@@ -24,6 +25,7 @@ public class TutorialItems {
 	public static final ItemRuby RUBY = Null();
 	public static final ItemTutorialRecord PERSPECTIVES_RECORD = Null();
 	public static final Item BROCCOLI = Null();
+	public static final BucketItem ACID_BUCKET = Null();
 	
 	public static class Foods {
 		public static final Food BROCCOLI = (new Food.Builder()).hunger(2).saturation(0.2F).fastToEat().effect(new EffectInstance(TutorialEffects.ODD, 10), 0.1F).build();
@@ -37,7 +39,8 @@ public class TutorialItems {
 			final Item[] item = {
 					new ItemRuby(),
 					new ItemTutorialRecord(8, TutorialSounds.Register.getSoundEvent(new ResourceLocation(Tutorial.MOD_ID, "perspectives")), new Properties().maxStackSize(1).group(Tutorial.TUTORIAL_TAB).rarity(Rarity.EPIC), "perspectives_record"),
-					new Item(new Item.Properties().group(Tutorial.TUTORIAL_TAB).maxStackSize(16).food(Foods.BROCCOLI)).setRegistryName("broccoli")
+					new Item(new Item.Properties().group(Tutorial.TUTORIAL_TAB).maxStackSize(16).food(Foods.BROCCOLI)).setRegistryName("broccoli"),
+					new BucketItem(() -> TutorialFluids.ACID, new Properties().group(Tutorial.TUTORIAL_TAB).maxStackSize(1)).setRegistryName(new ResourceLocation(Tutorial.MOD_ID, "acid_bucket"))
 			};
 			
 			event.getRegistry().registerAll(item);

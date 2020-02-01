@@ -7,6 +7,7 @@
 	"block.tutorial.storage": "Storage",
 	"block.tutorial.advanced_crafting_table": "Advanced Crafting Table",
 	"block.tutorial.stone_pedestal": "Stone Pedestal",
+	"block.tutorial.acid": "Acid",
 	"item.tutorial.ruby": "Ruby",
 	"item.tutorial.perspectives_record": "Perspectives Record",
 	"item.tutorial.perspectives_record.desc": "Kevin MacLeod - Perspectives",
@@ -31,6 +32,7 @@
 	"item.minecraft.tipped_arrow.effect.odd": "Odd Tipped Arrow",
 	"item.minecraft.tipped_arrow.effect.long_odd": "Odd Tipped Arrow",
 	"item.minecraft.tipped_arrow.effect.short_odd": "Odd Tipped Arrow",
+	"item.tutorial.acid_bucket": "Acid Bucket",
 	"commands.hello": "Hello, %s!",
 	"commands.hello.color": "Hello, %s%s!",
 	"commands.hello.unknown": "Unknown color: %s"

@@ -3,6 +3,7 @@ package com.championash5357.tutorial.init;
 import static com.championash5357.tutorial.util.InjectionUtil.Null;
 
 import com.championash5357.tutorial.Tutorial;
+import com.championash5357.tutorial.block.BlockAcid;
 import com.championash5357.tutorial.block.BlockAdvancedCraftingTable;
 import com.championash5357.tutorial.block.BlockJar;
 import com.championash5357.tutorial.block.BlockRubyOre;
@@ -33,6 +34,7 @@ public class TutorialBlocks {
 	public static final BlockStorage STORAGE = Null();
 	public static final BlockAdvancedCraftingTable ADVANCED_CRAFTING_TABLE = Null();
 	public static final BlockStonePedestal STONE_PEDESTAL = Null();
+	public static final BlockAcid ACID = Null();
 	
 	@Mod.EventBusSubscriber(modid = Tutorial.MOD_ID, bus = Bus.MOD)
 	public static class Register {
@@ -46,7 +48,8 @@ public class TutorialBlocks {
 					new BlockJar(),
 					new BlockStorage(),
 					new BlockAdvancedCraftingTable(),
-					new BlockStonePedestal()
+					new BlockStonePedestal(),
+					new BlockAcid()
 			};
 			
 			event.getRegistry().registerAll(blocks);
