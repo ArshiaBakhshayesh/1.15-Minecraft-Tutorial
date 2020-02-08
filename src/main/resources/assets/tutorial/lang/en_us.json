@@ -35,5 +35,6 @@
 	"item.tutorial.acid_bucket": "Acid Bucket",
 	"commands.hello": "Hello, %s!",
 	"commands.hello.color": "Hello, %s%s!",
-	"commands.hello.unknown": "Unknown color: %s"
+	"commands.hello.unknown": "Unknown color: %s",
+	"biome.tutorial.dry_tundra": "Dry Tundra"
 }
