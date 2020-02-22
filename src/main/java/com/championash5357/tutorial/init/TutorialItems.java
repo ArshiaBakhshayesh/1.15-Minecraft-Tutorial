@@ -2,21 +2,30 @@ package com.championash5357.tutorial.init;
 
 import static com.championash5357.tutorial.util.InjectionUtil.Null;
 
+import java.util.Map;
+import java.util.Random;
+
 import com.championash5357.tutorial.Tutorial;
 import com.championash5357.tutorial.item.ItemRuby;
 import com.championash5357.tutorial.item.ItemTutorialRecord;
 
+import net.minecraft.client.renderer.color.IItemColor;
+import net.minecraft.client.renderer.color.ItemColors;
 import net.minecraft.item.BucketItem;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.Properties;
+import net.minecraft.item.Items;
 import net.minecraft.item.Rarity;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
+import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
+import net.minecraftforge.registries.IRegistryDelegate;
 import net.minecraftforge.registries.ObjectHolder;
 
 @ObjectHolder(Tutorial.MOD_ID)
@@ -44,6 +53,16 @@ public class TutorialItems {
 			};
 			
 			event.getRegistry().registerAll(item);
+		}
+		
+		@SubscribeEvent
+		public static void registerColors(final ColorHandlerEvent.Item event) {
+			Map<IRegistryDelegate<Item>, IItemColor> color_map = ObfuscationReflectionHelper.getPrivateValue(ItemColors.class, event.getItemColors(), "colors");
+			if(color_map.containsKey(Items.POTION.delegate)) {
+				color_map.replace(Items.POTION.delegate, (stack, tintIndex) -> {
+					return (new Random()).nextInt(16777215);
+				});
+			}
 		}
 	}
 }
