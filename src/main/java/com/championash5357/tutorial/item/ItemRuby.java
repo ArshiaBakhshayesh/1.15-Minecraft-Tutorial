@@ -11,6 +11,7 @@ import net.minecraft.item.Rarity;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 public class ItemRuby extends Item {
@@ -22,6 +23,7 @@ public class ItemRuby extends Item {
 	
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent(TextFormatting.RED + "A shiny more valuable than emerald."));
+		tooltip.add((new StringTextComponent("" + TextFormatting.RED)).appendSibling(new TranslationTextComponent("information." + this.getTranslationKey())));
+		//tooltip.add(new StringTextComponent(TextFormatting.RED + "A shiny more valuable than emerald."));
 	}
 }

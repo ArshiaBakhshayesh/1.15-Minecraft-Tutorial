@@ -9,6 +9,7 @@
 	"block.tutorial.stone_pedestal": "Stone Pedestal",
 	"block.tutorial.acid": "Acid",
 	"item.tutorial.ruby": "Ruby",
+	"information.item.tutorial.ruby": "A gem more valuable than emerald.",
 	"item.tutorial.perspectives_record": "Perspectives Record",
 	"item.tutorial.perspectives_record.desc": "Kevin MacLeod - Perspectives",
 	"item.tutorial.broccoli": "Broccoli",
