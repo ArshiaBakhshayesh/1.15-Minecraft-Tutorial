@@ -5,10 +5,13 @@ import java.util.Random;
 
 import com.championash5357.tutorial.client.gui.AdvancedCraftingTableScreen;
 import com.championash5357.tutorial.client.gui.StorageScreen;
-import com.championash5357.tutorial.client.renderer.JarTileEntityRenderer;
-import com.championash5357.tutorial.client.renderer.StonePedestalTileEntityRenderer;
+import com.championash5357.tutorial.client.renderer.entity.GoatRenderer;
+import com.championash5357.tutorial.client.renderer.tileentity.JarTileEntityRenderer;
+import com.championash5357.tutorial.client.renderer.tileentity.StonePedestalTileEntityRenderer;
+import com.championash5357.tutorial.entity.passive.GoatEntity;
 import com.championash5357.tutorial.init.TutorialBlocks;
 import com.championash5357.tutorial.init.TutorialContainers;
+import com.championash5357.tutorial.init.TutorialEntities;
 import com.championash5357.tutorial.init.TutorialTileEntities;
 import com.championash5357.tutorial.proxy.IProxy;
 
@@ -17,11 +20,15 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.client.renderer.color.IItemColor;
 import net.minecraft.client.renderer.color.ItemColors;
+import net.minecraft.client.renderer.entity.EntityRenderer;
+import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.client.registry.IRenderFactory;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.registries.IRegistryDelegate;
@@ -40,6 +47,14 @@ public class ClientProxy implements IProxy {
 		tileEntityRenders();
 		ScreenManager.registerFactory(TutorialContainers.STORAGE.get(), StorageScreen::new);
 		ScreenManager.registerFactory(TutorialContainers.ADVANCED_CRAFTING_TABLE.get(), AdvancedCraftingTableScreen::new);
+		
+		RenderingRegistry.registerEntityRenderingHandler(TutorialEntities.GOAT.get(), new IRenderFactory<GoatEntity>() {
+
+			@Override
+			public EntityRenderer<? super GoatEntity> createRenderFor(EntityRendererManager manager) {
+				return new GoatRenderer(manager);
+			}
+		});
 	}
 	
 	private void blockRenders() {

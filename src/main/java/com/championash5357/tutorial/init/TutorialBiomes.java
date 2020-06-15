@@ -3,7 +3,9 @@ package com.championash5357.tutorial.init;
 import com.championash5357.tutorial.Tutorial;
 import com.championash5357.tutorial.world.biome.DryTundraBiome;
 
+import net.minecraft.entity.EntityClassification;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biomes;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.BiomeManager.BiomeEntry;
 import net.minecraftforge.common.BiomeManager.BiomeType;
@@ -20,5 +22,7 @@ public class TutorialBiomes {
 	public static void addBiomes() {
 		BiomeManager.addBiome(BiomeType.DESERT, new BiomeEntry(DRY_TUNDRA.get(), 30));
 		BiomeManager.addSpawnBiome(DRY_TUNDRA.get());
+		
+		Biomes.PLAINS.getSpawns(EntityClassification.CREATURE).add(new Biome.SpawnListEntry(TutorialEntities.GOAT.get(), 200, 2, 5));
 	}
 }
