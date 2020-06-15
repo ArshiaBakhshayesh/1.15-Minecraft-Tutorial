@@ -1,0 +1,16 @@
+{
+	"type": "crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "minecraft:glass"
+		},
+		{
+			"item": "tutorial:ruby_ore",
+			"count": 2
+		}
+	],
+	"result": {
+		"item": "minecraft:brown_stained_glass",
+		"count": 3
+	}
+}

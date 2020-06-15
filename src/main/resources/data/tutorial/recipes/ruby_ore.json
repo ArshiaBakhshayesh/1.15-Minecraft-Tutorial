@@ -1,0 +1,9 @@
+{
+	"type": "smelting",
+	"ingredient": {
+		"item": "tutorial:ruby"
+	},
+	"result": "tutorial:ruby_ore",
+	"experience": 2.5,
+	"cookingtime": 20000
+}

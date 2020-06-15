@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "": { "model": "tutorial:block/advanced_crafting_table" }
+    }
+}

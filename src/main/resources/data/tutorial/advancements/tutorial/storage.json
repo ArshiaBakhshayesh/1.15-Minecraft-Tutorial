@@ -1,0 +1,35 @@
+{
+  "parent": "tutorial:tutorial/root",
+  "display": {
+    "icon": {
+      "item": "tutorial:storage"
+    },
+    "title": {
+      "translate": "advancements.tutorial.storage.title"
+    },
+    "description": {
+      "translate": "advancements.tutorial.storage.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "storage": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "tutorial:storage"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "storage"
+    ]
+  ]
+}

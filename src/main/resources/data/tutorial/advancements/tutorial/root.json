@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "tutorial:ruby"
+    },
+    "title": {
+      "translate": "advancements.tutorial.root.title"
+    },
+    "description": {
+      "translate": "advancements.tutorial.root.description"
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false,
+    "background": "tutorial:textures/block/ruby_ore.png"
+  },
+  "criteria": {
+    "ruby": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "tutorial:ruby"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "ruby"
+    ]
+  ]
+}

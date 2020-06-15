@@ -1,0 +1,35 @@
+{
+  "parent": "tutorial:tutorial/storage",
+  "display": {
+    "icon": {
+      "item": "tutorial:storage"
+    },
+    "title": {
+      "translate": "advancements.tutorial.storage_in_storage.title"
+    },
+    "description": {
+      "translate": "advancements.tutorial.storage_in_storage.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "storage": {
+      "trigger": "tutorial:storage_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "tutorial:storage"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "storage"
+    ]
+  ]
+}
