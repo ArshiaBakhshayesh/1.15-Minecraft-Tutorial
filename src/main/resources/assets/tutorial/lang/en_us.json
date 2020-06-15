@@ -21,6 +21,7 @@
 	"advancements.tutorial.storage_in_storage.title": "Useless^2",
 	"advancements.tutorial.storage_in_storage.description": "Put a Storage block in a Storage block.",
 	"effect.tutorial.odd": "Odd",
+	"entity.tutorial.goat": "Goat",
 	"item.minecraft.potion.effect.odd": "Odd Potion",
 	"item.minecraft.potion.effect.long_odd": "Odd Potion",
 	"item.minecraft.potion.effect.short_odd": "Odd Potion",

@@ -7,6 +7,7 @@ import com.championash5357.tutorial.init.TutorialBlocks;
 import com.championash5357.tutorial.init.TutorialContainers;
 import com.championash5357.tutorial.init.TutorialCriterions;
 import com.championash5357.tutorial.init.TutorialEffects;
+import com.championash5357.tutorial.init.TutorialEntities;
 import com.championash5357.tutorial.init.TutorialFluids;
 import com.championash5357.tutorial.init.TutorialItems;
 import com.championash5357.tutorial.init.TutorialPotions;
@@ -79,6 +80,7 @@ public class Tutorial {
 		TutorialBlocks.BLOCKS.register(mod);
 		TutorialContainers.CONTAINER_TYPES.register(mod);
 		TutorialEffects.EFFECTS.register(mod);
+		TutorialEntities.ENTITY_TYPES.register(mod);
 		TutorialFluids.FLUIDS.register(mod);
 		TutorialItems.ITEMS.register(mod);
 		TutorialPotions.POTIONS.register(mod);
