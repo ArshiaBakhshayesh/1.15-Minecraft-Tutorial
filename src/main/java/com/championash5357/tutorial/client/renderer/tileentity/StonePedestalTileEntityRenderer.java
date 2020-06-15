@@ -1,4 +1,4 @@
-package com.championash5357.tutorial.client.renderer;
+package com.championash5357.tutorial.client.renderer.tileentity;
 
 import com.championash5357.tutorial.tileentity.StonePedestalTileEntity;
 import com.mojang.blaze3d.matrix.MatrixStack;
